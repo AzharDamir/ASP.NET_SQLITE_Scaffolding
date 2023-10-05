@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Tp1AspNet_Sqlite.props" />
+</Project>

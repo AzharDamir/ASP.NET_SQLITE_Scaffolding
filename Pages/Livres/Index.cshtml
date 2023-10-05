@@ -1,0 +1,54 @@
+﻿@page
+@model Tp1AspNet_Sqlite.Pages.Livres.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create" class="asp-page-link">Create New</a>
+</p>
+<form>
+    <p>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" class="filter-button" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Livre[0].titre)
+            </th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Livre)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.titre)
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.ImagePath))
+                    {
+                        <img src="@item.ImagePath" alt="@item.titre" />
+                    }
+                    else
+                    {
+                        <span>No Image</span>
+                    }
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.id" class="action-link">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.id" class="action-link">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.id" class="action-link">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

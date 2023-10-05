@@ -1,0 +1,91 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+/* Apply styles to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style the header */
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style the "Create New" link */
+a.asp-page {
+    text-decoration: none;
+    background-color: #f90;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Style the form input and button */
+form {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+input[type="submit"] {
+    background-color: #f90;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Style the image */
+img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+/* Style the "No Image" span */
+span {
+    color: #999;
+}
+
+/* Style the action links */
+a.asp-page {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+    /* Style the action links on hover */
+    a.asp-page:hover {
+        text-decoration: underline;
+    }

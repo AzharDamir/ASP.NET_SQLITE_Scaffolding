@@ -1,0 +1,38 @@
+﻿@page
+@model Tp1AspNet_Sqlite.Pages.Livres.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Livre</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Livre.titre" class="control-label"></label>
+                <input asp-for="Livre.titre" class="form-control" />
+                <span asp-validation-for="Livre.titre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="imageFile">Image File</label>
+                <input type="file" class="form-control" id="imageFile" name="imageFile" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
