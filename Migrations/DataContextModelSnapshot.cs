@@ -26,6 +26,17 @@ namespace Tp1AspNet_Sqlite.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("category")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("desc")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("price")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("titre")
                         .IsRequired()
                         .HasColumnType("TEXT");

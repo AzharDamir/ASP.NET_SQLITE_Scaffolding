@@ -17,7 +17,10 @@ namespace Tp1AspNet_Sqlite.Migrations
                     id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     titre = table.Column<string>(type: "TEXT", nullable: false),
-                    ImagePath = table.Column<string>(type: "TEXT", nullable: false)
+                    desc = table.Column<string>(type: "TEXT", nullable: false),
+                    category = table.Column<string>(type: "TEXT", nullable: false),
+                    ImagePath = table.Column<string>(type: "TEXT", nullable: false),
+                    price = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -10,7 +10,7 @@ using Tp1AspNet_Sqlite.Data;
 namespace Tp1AspNet_Sqlite.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20231005143427_initialecreate")]
+    [Migration("20231017111329_initialecreate")]
     partial class initialecreate
     {
         /// <inheritdoc />
@@ -28,6 +28,17 @@ namespace Tp1AspNet_Sqlite.Migrations
                     b.Property<string>("ImagePath")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("category")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("desc")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("price")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("titre")
                         .IsRequired()

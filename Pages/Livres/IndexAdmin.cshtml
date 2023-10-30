@@ -2,7 +2,7 @@
 @model Tp1AspNet_Sqlite.Pages.Livres.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "IndexAdmin";
 }
 
 <head>
@@ -136,13 +136,13 @@ label {
 .products {
 	display: flex;
 	flex-wrap: wrap;
+            padding: 1rem;
 }
 
 .product-card {
 	display: flex;
 	flex-direction: column;
-	
-	padding: 2%;
+    padding: 1rem;
 	flex: 1 16%;
 	
 	background-color: #FFF;
@@ -166,7 +166,11 @@ label {
 </head>
 
 <body id="body-start">
-    <h1>Book Store</h1>
+    <h1>Our store</h1>
+
+    <p>
+        <a asp-page="Create" class="btn btn-primary">Create New</a>
+    </p>
 
     <form class="form-inline mb-4 mt-4">
         <div class="form-group mr-2">
@@ -179,48 +183,29 @@ label {
                 <option value="">All</option>
             </select>-->
         </div>
-        <div class="form-group mr-2">
-            <label for="productGenre" class="mr-2">Product Genre:</label>
-            <select id="productGenre" name="productGenre" class="form-control">
-                <option value="">All</option>
-                @foreach (var category in Model.Livre.Select(x => x.category).Distinct())
-                {
-                    <option value="@category">@category</option>
-                }
-            </select>
-        </div>
         <button type="submit" class="btn btn-primary">Filter</button>
     </form>
     <a asp-page="./Commander" class="btn btn-primary btn-sm">My Cart</a>
 
-    <div class="row products">
+    <div class="row products ">
         @foreach (var item in Model.Livre)
         {
-            <div class="product-card col-md-3 mb-4">
+            <div class="product-card col-md-3  mb-4 ">
                 <div class="product-image">
                     <img src="@item.ImagePath" alt="Product Image" class="product-image">
                 </div>
                 
                 <div class="product-info">
                     <h5 class="mb-2">@item.titre</h5>
-
-                    <p class ="mb-2">Price: $@item.price</p>
+                    <h6 class="mb-2">@item.desc</h6>
+                    <p class="mb-2">Price: $@item.price</p>
                 </div>
                 <div class="product-actions">
                     <!-- Edit, Details, Delete, and Add to Cart buttons -->
-                    <!--<form method="post" asp-page-handler="AddToCart" asp-route-id="@item.id">
-                        <div class="form-group">
-                            <label for="quantity" class="sr-only">Quantity:</label>
-                            <input type="number" id="quantity" name="quantity" class="form-control" value="1" min="1" />
-                        </div>
-                        <button type="submit" class="btn btn-success btn-sm ml-2">Add to Cart</button>
-                    </form>-->
-                    <div class="product-card col-md-3 mb-4">
-                        <!-- ... -->
-                        <form method="post" asp-page-handler="AddToCart" asp-route-livreId="@item.id">
-                            <button type="submit" class="btn btn-success btn-sm ml-2">Add to Cart</button>
-                        </form>
-                    </div>
+                    <a asp-page="./Edit" asp-route-id="@item.id" class="mb-3">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.id" class="mb-3">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.id" class="mb-3">Delete</a>
+       
                 </div>
             </div>
         }

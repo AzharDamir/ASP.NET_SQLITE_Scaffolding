@@ -245,6 +245,34 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\azhar damir\\OneDrive\\Bureau\\ILISI 3\\aspNet\\Tp1AspNet_Sqlite\\wwwroot\\uploads\\0afdupjl.tlf.jpg",
+      "PackagePath": "staticwebassets\\uploads\\0afdupjl.tlf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\azhar damir\\OneDrive\\Bureau\\ILISI 3\\aspNet\\Tp1AspNet_Sqlite\\wwwroot\\uploads\\3pprmnyu.mw5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3pprmnyu.mw5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\azhar damir\\OneDrive\\Bureau\\ILISI 3\\aspNet\\Tp1AspNet_Sqlite\\wwwroot\\uploads\\55sype4l.vyn.jpg",
+      "PackagePath": "staticwebassets\\uploads\\55sype4l.vyn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\azhar damir\\OneDrive\\Bureau\\ILISI 3\\aspNet\\Tp1AspNet_Sqlite\\wwwroot\\uploads\\g4spqfko.5hy.jpg",
+      "PackagePath": "staticwebassets\\uploads\\g4spqfko.5hy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\azhar damir\\OneDrive\\Bureau\\ILISI 3\\aspNet\\Tp1AspNet_Sqlite\\wwwroot\\uploads\\hqyh4iyl.a2r.jpg",
+      "PackagePath": "staticwebassets\\uploads\\hqyh4iyl.a2r.jpg"
+    },
+    {
+      "Id": "C:\\Users\\azhar damir\\OneDrive\\Bureau\\ILISI 3\\aspNet\\Tp1AspNet_Sqlite\\wwwroot\\uploads\\jg2nijac.noh.jpg",
+      "PackagePath": "staticwebassets\\uploads\\jg2nijac.noh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\azhar damir\\OneDrive\\Bureau\\ILISI 3\\aspNet\\Tp1AspNet_Sqlite\\wwwroot\\uploads\\q5khqld2.uhl.jpg",
+      "PackagePath": "staticwebassets\\uploads\\q5khqld2.uhl.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Tp1AspNet_Sqlite.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

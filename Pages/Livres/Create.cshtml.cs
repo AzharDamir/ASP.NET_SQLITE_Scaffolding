@@ -55,7 +55,7 @@ namespace Tp1AspNet_Sqlite.Pages.Livres
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("./IndexAdmin");
         }
     }
 }

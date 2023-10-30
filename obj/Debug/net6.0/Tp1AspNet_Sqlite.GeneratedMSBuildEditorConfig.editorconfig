@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/azhar damir/OneDrive/Bureau/ILISI 3/aspNet/Tp1AspNet_Sqlite/Pages/Livres/CartModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGl2cmVzXENhcnRNb2RlbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/azhar damir/OneDrive/Bureau/ILISI 3/aspNet/Tp1AspNet_Sqlite/Pages/Livres/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGl2cmVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/azhar damir/OneDrive/Bureau/ILISI 3/aspNet/Tp1AspNet_Sqlite/Pages/Livres/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGl2cmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/azhar damir/OneDrive/Bureau/ILISI 3/aspNet/Tp1AspNet_Sqlite/Pages/Livres/IndexAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGl2cmVzXEluZGV4QWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/azhar damir/OneDrive/Bureau/ILISI 3/aspNet/Tp1AspNet_Sqlite/Pages/Privacy.cshtml]

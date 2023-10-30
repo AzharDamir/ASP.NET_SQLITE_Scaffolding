@@ -1,0 +1,50 @@
+﻿
+@page
+@model CartModel
+@{
+    ViewData["Title"] = "CartModel";
+}
+<h1 class="text-center">Shopping Cart</h1>
+@if (Model.CartItems.Count > 0)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img src="@item.Livre.ImagePath" alt="Product Image" class="product-image">
+                            <p>@item.Livre.titre</p>
+                        </div>
+                    </td>
+                    <td>$@item.Price</td>
+                    <td>
+                        <input type="number" class="form-control" min="1" max="100" step="1" value="@item.Quantity" />
+                    </td>
+                    <td>$@(item.Price * item.Quantity)</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">Remove</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="text-end">
+        <button class="btn btn-primary">Update Cart</button>
+        <button class="btn btn-danger">Clear Cart</button>
+    </div>
+}
+else
+{
+    <p class="text-center">Your cart is empty.</p>
+}
