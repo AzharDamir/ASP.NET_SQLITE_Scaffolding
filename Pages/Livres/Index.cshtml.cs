@@ -46,29 +46,31 @@ namespace Tp1AspNet_Sqlite.Pages.Livres
         }
        
       
-        public IActionResult OnPostAddToCart(int livreId)
+        public IActionResult OnPostAddToCart(int livreId, int quantity)
         {
             var livre = _context.Livre.FirstOrDefault(l => l.id == livreId);
-
-            if (livre != null)
-            {
-                var panierElement = new PanierElement
+            
+                if (livre != null)
                 {
-                    LivreId = livre.id,
-                    Livre = livre,
-                    Quantity = 1,
-                    Price = livre.price
-                };
+                    var panierElement = new PanierElement
+                    {
+                        LivreId = livre.id,
+                        Livre = livre,
+                        Quantity = quantity,
+                        Price = livre.price
+                    };
 
-                // Récupérer le panier depuis les cookies
-                List<PanierElement> panierItems = GetCartItems();
+                    // Récupérer le panier depuis les cookies
+                    List<PanierElement> panierItems = GetCartItems();
 
-                // Ajouter l'élément au panier
-                panierItems.Add(panierElement);
+                    // Ajouter l'élément au panier
+                    panierItems.Add(panierElement);
 
-                // Enregistrer le panier dans les cookies
-                SetCartItems(panierItems);
+                    // Enregistrer le panier dans les cookies
+                    SetCartItems(panierItems);
+                
             }
+            
 
             // Redirigez l'utilisateur vers la page du panier (Cart)
             return RedirectToPage("CartModel");
@@ -101,6 +103,8 @@ namespace Tp1AspNet_Sqlite.Pages.Livres
 
         [BindProperty(SupportsGet = true)]
         public string? productGenre { get; set; }
+
+       // public int quantity { get; set; }
 
     }
 }

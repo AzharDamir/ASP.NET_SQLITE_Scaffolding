@@ -30,18 +30,17 @@ namespace Tp1AspNet_Sqlite.Pages.Livres
             CartItems = GetCartItems();
             return Page();
         }
-
-        public IActionResult OnPostAddToCart(int livreId)
+       /* public IActionResult OnPostAddToCart(int livreId,int quantity)
         {
             var livre = GetLivreById(livreId);
-
+           
             if (livre != null)
             {
                 var panierElement = new PanierElement
                 {
                     LivreId = livre.id,
                     Livre = livre,
-                    Quantity = 1, // Vous pouvez obtenir la quantité à partir du formulaire
+                    Quantity = quantity, // Vous pouvez obtenir la quantité à partir du formulaire
                     Price = livre.price
                 };
 
@@ -54,6 +53,23 @@ namespace Tp1AspNet_Sqlite.Pages.Livres
 
             return RedirectToPage("CartModel");
         }
+   */
+        public IActionResult OnPostRemoveFromCart(int livreId)
+        {
+            var existingItem = CartItems.FirstOrDefault(item => item.LivreId == livreId);
+
+            if (existingItem != null)
+            {
+                // Supprimez l'élément du panier
+                CartItems.Remove(existingItem);
+
+                // Mettez à jour le panier dans les cookies après la suppression
+                SetCartItems(CartItems);
+            }
+
+            return RedirectToPage("CartModel");
+        }
+
 
         private List<PanierElement> GetCartItems()
         {

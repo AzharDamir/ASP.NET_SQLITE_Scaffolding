@@ -1,50 +1,156 @@
-﻿
-@page
+﻿@page
 @model CartModel
 @{
-    ViewData["Title"] = "CartModel";
+    ViewData["Title"] = "Shopping Cart";
 }
-<h1 class="text-center">Shopping Cart</h1>
-@if (Model.CartItems.Count > 0)
-{
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<style>
+    /* Add your custom CSS styles here */
+    .cart-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .cart-items {
+        display: flex;
+        flex-wrap: wrap;
+        padding:1rem;
+    }
+
+    .cart-item {
+        display: flex;
+        background-color: #f9f9f9;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .cart-item-image img {
+        max-width: 100px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .cart-item-details {
+        flex: 1;
+        padding: 10px;
+    }
+
+    .cart-item-title {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .cart-item-price {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .cart-quantity {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+        .cart-quantity label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+    .cart-item-total {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .cart-item-remove {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    .cart-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    .cart-update-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .cart-clear-button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .cart-empty-message {
+        text-align: center;
+        font-size: 18px;
+        margin: 20px 0;
+    }
+
+</style>
+<div class="cart-container">
+    <h1 class="cart-title">Shopping Cart</h1>
+
+    @if (Model.CartItems.Count > 0)
+    {
+        <div class="row cart-items">
             @foreach (var item in Model.CartItems)
             {
-                <tr>
-                    <td>
-                        <div class="product-info">
-                            <img src="@item.Livre.ImagePath" alt="Product Image" class="product-image">
-                            <p>@item.Livre.titre</p>
+                <div class="cart-item">
+                    <div class="cart-item-image">
+                        <img src="@item.Livre.ImagePath" alt="Product Image">
+                    </div>
+                    <div class="cart-item-details">
+                        <h2 class="cart-item-title">@item.Livre.titre</h2>
+                        <p class="cart-item-price">$@item.Price</p>
+                        <div class="cart-quantity">
+                            <label for="quantity">Quantity:</label>
+                            <p class="cart-item-price">@item.Quantity</p>
                         </div>
-                    </td>
-                    <td>$@item.Price</td>
-                    <td>
-                        <input type="number" class="form-control" min="1" max="100" step="1" value="@item.Quantity" />
-                    </td>
-                    <td>$@(item.Price * item.Quantity)</td>
-                    <td>
-                        <button class="btn btn-danger btn-sm">Remove</button>
-                    </td>
-                </tr>
+                        <p class="cart-item-total">Total: $@(item.Price * item.Quantity)</p>
+                        <div class="cart-item-actions">
+                        <form method="post" asp-page-handler="RemoveFromCart" asp-route-livreId="@item.Livre.id" class="form-inline">
+                            <button type="submit" class="btn btn-success btn-sm ml-2">Remove</button>
+                        </form>
+                        </div>
+                        
+                    </div>
+                </div>
             }
-        </tbody>
-    </table>
-    <div class="text-end">
-        <button class="btn btn-primary">Update Cart</button>
-        <button class="btn btn-danger">Clear Cart</button>
-    </div>
-}
-else
-{
-    <p class="text-center">Your cart is empty.</p>
-}
+        </div>
+
+        <div class="cart-actions">
+            <button class="cart-update-button">Update Cart</button>
+            <button class="cart-clear-button">Clear Cart</button>
+        </div>
+    }
+    else
+    {
+        <p class="cart-empty-message">Your cart is empty.</p>
+    }
+</div>
